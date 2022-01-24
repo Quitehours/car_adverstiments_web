@@ -1,0 +1,22 @@
+.h1.m-4 New Search: 
+
+= form_with model: @search do |f|
+  .form-group.m-4
+    .label.mb-2= f.label :make
+    = f.text_field :make, placeholder: "Enter make"
+  .form-group.m-4
+    .label.mb-2= f.label :model
+    = f.text_field :model, placeholder: "Enter model"
+  .form-group.m-4
+    .label.mb-2= f.label :year_from
+    = f.text_field :year_from, placeholder: "Enter year from"
+  .form-group.m-4
+    .label.mb-2= f.label :year_to
+    = f.text_field :year_to, placeholder: "Enter year to"
+  .form-group.m-4
+    .label.mb-2= f.label :price_from
+    = f.text_field :make, placeholder: "Enter price from"
+  .form-group.m-4
+    .label.mb-2= f.label :price_to
+    = f.text_field :make, placeholder: "Enter price to"
+  .m-4= f.submit 'Perform search'

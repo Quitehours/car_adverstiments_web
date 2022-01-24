@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_095257) do
+ActiveRecord::Schema.define(version: 2022_01_24_123637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 2022_01_24_095257) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["make", "model", "price"], name: "index_cars_on_make_and_model_and_price"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string "make"
+    t.string "model"
+    t.string "year_from"
+    t.string "year_to"
+    t.string "price_from"
+    t.string "price_to"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

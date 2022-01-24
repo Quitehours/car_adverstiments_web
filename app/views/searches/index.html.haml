@@ -1,0 +1,15 @@
+.h4.m-5 All Searches: 
+
+- @searhces.each do |search|
+  .col.m-4
+    .card{style: "width: 25rem;"}
+      .card-body  
+        .card-text= "make: #{search.make}"
+        .card-text= "model: #{search.model}"
+        .card-text= "year from: #{search.year_from}"
+        .card-text= "year to: #{search.year_to}"
+        .card-text= "price from: #{search.price_from}"
+        .card-text= "price to: #{search.price_to}"
+        .card-text= "date added: #{search.create_at}"
+    .mb-3
+

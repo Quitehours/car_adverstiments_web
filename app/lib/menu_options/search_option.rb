@@ -9,7 +9,7 @@ module MenuOptions
     end
 
     def action
-      'search/index'
+      'searches/new'
     end
 
     def show?
