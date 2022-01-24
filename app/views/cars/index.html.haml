@@ -1,0 +1,15 @@
+.h3.col.d-flex.justify-content-center Cars List:
+.h4.col.d-flex.justify-content-center= @cars.count
+
+- @cars.each do |cars|
+  .col.d-flex.justify-content-center
+    .card{style: "width: 25rem;"}
+      .card-body  
+        .card-text= "make: #{cars.make}"
+        .card-text= "model: #{cars.model}"
+        .card-text= "year: #{cars.year}"
+        .card-text= "price: #{number_to_currency(cars.price, unit: "$", format: "%n %u", delimiter: " ")}"
+        .card-text= "odometer: #{cars.odometer}"
+        .card-text= "description: #{cars.description}"
+        .card-text= "date added: #{cars.created_at.to_date}"
+  .mb-3
