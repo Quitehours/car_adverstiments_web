@@ -1,15 +1,30 @@
-.h4.m-4 Cars List:
--# .h4.m-4= "Cars Quantity: #{@found_cars.count}" 
+.container
+  .row
+    .col-3
+      .h4.m-4 Sort types:
+      %div
+        -# %button.btn.btn-primary= link_to 'param', cars_path(params)
+        
+        %button= link_to 'Date added', cars_path, class: "btn btn-primary"
+      .h4.m-4 Sort directions:
+      %div
+        %button= link_to 'ASC', cars_path, class: "btn btn-primary"
+        %button= link_to 'DESC', cars_path, class: "btn btn-primary"
+    .col-6
+      .h4.m-4 Cars List:
+      -# .h4.m-4= "Cars Quantity: #{@found_cars.count}" 
 
-- @cars.each do |car|
-  .col.m-4
-    .card{style: "width: 25rem;"}
-      .card-body  
-        .card-text= "make: #{car.make}"
-        .card-text= "model: #{car.model}"
-        .card-text= "year: #{car.year}"
-        .card-text= "price: #{number_to_currency(car.price, unit: "$", format: "%n %u", delimiter: " ")}"
-        .card-text= "odometer: #{car.odometer}"
-        .card-text= "description: #{car.description}"
-        .card-text= "date added: #{car.created_at.to_date}"
-  .mb-3
+      - @cars.each do |car|
+        .col.m-4
+          .card{style: "width: 25rem;"}
+            .card-body  
+              .card-text= "make: #{car.make}"
+              .card-text= "model: #{car.model}"
+              .card-text= "year: #{car.year}"
+              .card-text= "price: #{number_to_currency(car.price, unit: "$", format: "%n %u", delimiter: " ")}"
+              .card-text= "odometer: #{car.odometer}"
+              .card-text= "description: #{car.description}"
+              .card-text= "date added: #{car.created_at.to_date}"
+        .mb-3
+
+  
