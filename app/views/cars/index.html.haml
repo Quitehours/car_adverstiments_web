@@ -1,18 +1,15 @@
 .container
   .row
     .col-3
-      .h4.m-4 Sort types:
-      %div
-        -# %button.btn.btn-primary= link_to 'param', cars_path(params)
-        
-        %button= link_to 'Date added', cars_path, class: "btn btn-primary"
-      .h4.m-4 Sort directions:
-      %div
-        %button= link_to 'ASC', cars_path, class: "btn btn-primary"
-        %button= link_to 'DESC', cars_path, class: "btn btn-primary"
+      .h4.m-4  Choose sort:
+      %ul.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+        %li.nav-link.px-2=link_to 'Date added desc', cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :desc))
+        %li.nav-link.px-2=link_to 'Date added asc', cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :asc))
+        %li.nav-link.px-2=link_to 'Price desc', cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :desc))
+        %li.nav-link.px-2=link_to 'Price asc', cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :asc))
     .col-6
       .h4.m-4 Cars List:
-      -# .h4.m-4= "Cars Quantity: #{@found_cars.count}" 
+      .h4.m-4= "Cars Quantity: #{@cars.count}" 
 
       - @cars.each do |car|
         .col.m-4

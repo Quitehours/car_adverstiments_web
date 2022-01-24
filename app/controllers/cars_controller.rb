@@ -1,6 +1,5 @@
 class CarsController < ApplicationController
   def index
-    # binding.pry
     @cars = CarsQuery.new.call(index_params)
   end
 

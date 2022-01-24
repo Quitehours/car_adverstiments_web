@@ -1,5 +1,7 @@
 .h1.m-4 New Search: 
 
+= render 'shared/errors', object: @search
+
 = form_with model: @search do |f|
   .form-group.m-4
     .label.mb-2= f.label :make

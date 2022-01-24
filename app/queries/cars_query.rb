@@ -15,11 +15,11 @@ class CarsQuery
   private
 
   def filter_by_make(collection, query = nil)
-    query.present? ? collection.where("make ILIKE ?", "%#{query}%") : collection
+    query.present? ? collection.where('make ILIKE ?', "%#{query}%") : collection
   end
 
   def filter_by_model(collection, query = nil)
-    query.present? ? collection.where("model ILIKE ?", "%#{query}%") : collection
+    query.present? ? collection.where('model ILIKE ?', "%#{query}%") : collection
   end
 
   def filtration_by_price(collection, from_price = nil, to_price = nil)
