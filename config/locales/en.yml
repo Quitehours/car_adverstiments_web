@@ -2,3 +2,22 @@ en:
   tasks:
     db:
       cars_seed: Added %{quantity} cars to database
+  lib:
+    menu_options:
+      name:
+        help_option: Help
+        search_option: Search
+        cars_list_option: Cars list
+        logout: Logout
+        login: Login
+        sign_up: Sign Up
+        my_searches: My Searches
+      description:
+        help_option: This option has instructions for using the application
+        search_option: Starts a search by list cars
+        cars_list_option: Returns a list of all cars
+        logout: Exit your active session
+        login: Log in to your account
+        sign_up: Sign up your new account
+        my_searches: Current users searches
+
