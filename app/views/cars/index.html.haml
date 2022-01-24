@@ -1,15 +1,15 @@
 .h4.m-4 Cars List:
-.h4.m-4= "Cars Quantity: #{@cars.count}"
+-# .h4.m-4= "Cars Quantity: #{@found_cars.count}" 
 
-- @cars.each do |cars|
+- @cars.each do |car|
   .col.m-4
     .card{style: "width: 25rem;"}
       .card-body  
-        .card-text= "make: #{cars.make}"
-        .card-text= "model: #{cars.model}"
-        .card-text= "year: #{cars.year}"
-        .card-text= "price: #{number_to_currency(cars.price, unit: "$", format: "%n %u", delimiter: " ")}"
-        .card-text= "odometer: #{cars.odometer}"
-        .card-text= "description: #{cars.description}"
-        .card-text= "date added: #{cars.created_at.to_date}"
+        .card-text= "make: #{car.make}"
+        .card-text= "model: #{car.model}"
+        .card-text= "year: #{car.year}"
+        .card-text= "price: #{number_to_currency(car.price, unit: "$", format: "%n %u", delimiter: " ")}"
+        .card-text= "odometer: #{car.odometer}"
+        .card-text= "description: #{car.description}"
+        .card-text= "date added: #{car.created_at.to_date}"
   .mb-3

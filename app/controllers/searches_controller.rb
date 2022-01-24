@@ -9,9 +9,12 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(create_params)
-    return redirect_to cars_path if @search.save
 
-    render :new
+    if @search.save
+      redirect_to cars_path(create_params)
+    else
+      render :new
+    end
   end
 
   private
