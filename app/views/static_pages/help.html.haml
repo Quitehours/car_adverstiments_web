@@ -1,0 +1,11 @@
+%h1 Help:
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th{:scope => "col"} Option:
+      %th{:scope => "col"} Description:
+  %tbody
+    -@options.each do |option|
+      %tr
+        %th{:scope => "row"}= option.name
+        %th{:scope => "row"}= option.description
