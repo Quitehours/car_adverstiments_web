@@ -4,7 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.0'
 
 gem 'bcrypt', '~> 3.1.7'
+gem "bootstrap", "~> 5.0.2"
 gem 'bootsnap', require: false
+gem 'sass-rails', '~> 6.0'
 gem 'devise', '~> 4.8'
 gem 'haml', '~> 5.2'
 gem 'importmap-rails'

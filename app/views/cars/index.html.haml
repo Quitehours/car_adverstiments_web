@@ -1,8 +1,8 @@
-.h3.col.d-flex.justify-content-center Cars List:
-.h4.col.d-flex.justify-content-center= @cars.count
+.h4.m-4 Cars List:
+.h4.m-4= "Cars Quantity: #{@cars.count}"
 
 - @cars.each do |cars|
-  .col.d-flex.justify-content-center
+  .col.m-4
     .card{style: "width: 25rem;"}
       .card-body  
         .card-text= "make: #{cars.make}"
