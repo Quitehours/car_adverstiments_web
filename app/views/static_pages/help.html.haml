@@ -5,7 +5,25 @@
       %th{:scope => "col"} Option:
       %th{:scope => "col"} Description:
   %tbody
-    -@options.each do |option|
-      %tr
-        %th{:scope => "row"}= option.name
-        %th{:scope => "row"}= option.description
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.cars_list_option')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.cars_list_option')
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.help_option')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.help_option')
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.login')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.login')
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.logout')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.logout')
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.my_searches')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.my_searches')
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.search_option')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.search_option')
+    %tr
+      %th{:scope => "row"}= I18n.t('lib.menu_options.name.sign_up')
+      %th{:scope => "row"}= I18n.t('lib.menu_options.description.sign_up')
+      

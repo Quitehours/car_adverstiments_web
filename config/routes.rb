@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :searches, only: %i[index new create]
 
   get '/help', to: 'static_pages#help'
-  root 'static_pages#menu'
+  root 'static_pages#home'
 end
