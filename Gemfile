@@ -25,6 +25,7 @@ end
 group :development do
   gem 'bundler-audit', '~> 0.9.0.1'
   gem 'bundler-leak', '~> 0.2.0'
+  gem 'ffaker', '~> 2.20'
   gem 'pry-rails', '~> 0.3.4'
   gem 'rubocop', '~> 1.22.0', require: false
   gem 'rubocop-performance', '~> 1.11'
@@ -32,7 +33,6 @@ group :development do
   gem 'rubocop-rake', '~> 0.6.0'
   gem 'solargraph', '~> 0.44.2'
   gem 'strong_migrations', '~> 0.7.9'
-  gem 'ffaker', '~> 2.20'
   gem 'web-console', '~> 4.2'
 end
 

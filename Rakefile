@@ -1,5 +1,5 @@
 require 'ffaker'
 
-require_relative "config/application"
+require_relative 'config/application'
 
 Rails.application.load_tasks
