@@ -1,15 +1,27 @@
-.h4.m-4 Cars List:
-.h4.m-4= "Cars Quantity: #{@cars.count}"
+.container
+  .row
+    .col-3
+      .h4.m-4= I18n.t('cars.index.choose_sort')
+      %ul.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+        %li.nav-link.px-2=link_to I18n.t('cars.index.date_desc'), cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :desc))
+        %li.nav-link.px-2=link_to I18n.t('cars.index.date_asc'), cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :asc))
+        %li.nav-link.px-2=link_to I18n.t('cars.index.price_desc'), cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :desc))
+        %li.nav-link.px-2=link_to I18n.t('cars.index.price_asc'), cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :asc))
+    .col-6
+      .h4.m-4= I18n.t('cars.index.cars_list')
+      .h4.m-4= I18n.t('cars.index.cars_quantity', quantity: @cars.count)
 
-- @cars.each do |cars|
-  .col.m-4
-    .card{style: "width: 25rem;"}
-      .card-body  
-        .card-text= "make: #{cars.make}"
-        .card-text= "model: #{cars.model}"
-        .card-text= "year: #{cars.year}"
-        .card-text= "price: #{number_to_currency(cars.price, unit: "$", format: "%n %u", delimiter: " ")}"
-        .card-text= "odometer: #{cars.odometer}"
-        .card-text= "description: #{cars.description}"
-        .card-text= "date added: #{cars.created_at.to_date}"
-  .mb-3
+      - @cars.each do |car|
+        .col.m-4
+          .card{style: "width: 25rem;"}
+            .card-body  
+              .card-text= I18n.t('cars.index.make', param: car.make)
+              .card-text= I18n.t('cars.index.model', param: car.model)
+              .card-text= I18n.t('cars.index.year', param: car.year)
+              .card-text= I18n.t('cars.index.price', param: number_to_currency(car.price, unit: "$", format: "%n %u", delimiter: " "))
+              .card-text= I18n.t('cars.index.odometer', param: car.odometer)
+              .card-text= I18n.t('cars.index.description', param: car.description)
+              .card-text= I18n.t('cars.index.make', param: car.created_at.to_date)
+        .mb-3
+
+  
