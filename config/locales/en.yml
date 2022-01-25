@@ -2,22 +2,58 @@ en:
   tasks:
     db:
       cars_seed: Added %{quantity} cars to database
-  lib:
-    menu_options:
-      name:
-        help_option: Help
-        search_option: Search
-        cars_list_option: Cars list
-        logout: Logout
-        login: Login
-        sign_up: Sign Up
-        my_searches: My Searches
+  static_pages:
+    help:
       description:
-        help_option: This option has instructions for using the application
-        search_option: Starts a search by list cars
-        cars_list_option: Returns a list of all cars
+        help: This option has instructions for using the application
+        search: Starts a search by list cars
+        cars_list: Returns a list of all cars
         logout: Exit your active session
         login: Log in to your account
         sign_up: Sign up your new account
         my_searches: Current users searches
-
+        option: 'Option:'
+        description: 'Description:'
+    options:
+        help: Help
+        search: Search
+        cars_list: Cars list
+        logout: Logout
+        login: Login
+        sign_up: Sign Up
+        my_searches: My Searches
+        home: Home
+  searches:
+    new:
+      placeholders:
+        make: Enter make
+        model: Enter model
+        year_from: Enter year from
+        year_to: Enter year to
+        price_from: Enter price from
+        price_to: Enter price to
+        perform_search: Perform search
+    index:
+      all_searches: 'All searches:'
+      make: 'Make: %{param}'
+      model: 'Model: %{param}'
+      year_from: 'Year from: %{from}'
+      year_to: 'Year to: %{param}'
+      price_from: 'Price from: %{param}'
+      price_to: 'Price to: %{param}'
+  cars:
+    index:
+      choose_sort: 'Choose sort:'
+      date_desc: Date added desc
+      date_asc: Date added asc
+      price_desc: Price desc
+      price_asc: Price asc
+      cars_list: 'Cars List:'
+      cars_quantity: 'Cars Quantity: %{quantity}'
+      make: 'Make: %{param}'
+      model: 'Model: %{param}'
+      year: 'Year: %{param}'
+      price: 'Price: %{param}'
+      odometer: 'Odometer: %{param}'
+      description: 'Description: %{param}'
+      date_added: 'Date added: %{param}'

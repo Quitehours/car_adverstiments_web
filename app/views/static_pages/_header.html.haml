@@ -2,12 +2,11 @@
   .container
     %nav.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
       %ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
-        %li= link_to 'Home', root_path, class: "nav-link px-2 text-white"
-        %li= link_to 'Help', help_path, class: "nav-link px-2 text-white"
-        %li= link_to 'Search', new_search_path, class: "nav-link px-2 text-white"
-        %li= link_to 'Car List', cars_path, class: "nav-link px-2 text-white"
-        %li= link_to 'My Searches', root_path, class: "nav-link px-2 text-white"
-        %li= link_to 'Login', root_path, class: "nav-link px-2 text-white"
-        %li= link_to 'Logout', root_path, class: "nav-link px-2 text-white"
-        
-
+        %li= link_to I18n.t('static_pages.options.home'), root_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.help'), help_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.cars_list'), cars_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.search'), new_search_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.login'), root_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.sign_up'), root_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.my_searches'), root_path, class: "nav-link px-2 text-white"
+        %li= link_to I18n.t('static_pages.options.logout'), root_path, class: "nav-link px-2 text-white"
