@@ -21,7 +21,6 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '379548d9bcdff62ff5cecdd3166dd3d29c06636c8be5c85c2456dfae3cc7e2fd81469679767b9357da61f962f9917faa359cadc1f26e413a6f8fcdae567cb8f7'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -135,7 +134,6 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '7f24c76bca1055e203235874d6330ce4d3f8cf6b90d52c85947e7be0c48849eb9e8e2d1e265f823b0cf3812b5254c14d00629b37ce2aa06463e99039de8d1307'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -289,8 +287,8 @@ Devise.setup do |config|
   #
   config.warden do |manager|
     manager.failure_app = TurboFailureApp
-  #   manager.intercept_401 = false
-  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+    #   manager.intercept_401 = false
+    #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   end
 
   # ==> Mountable engine configurations

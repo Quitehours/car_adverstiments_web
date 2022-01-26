@@ -1,0 +1,6 @@
+%li.page-item.last
+  - if current_page.last?
+    = tag.span t('views.pagination.last').html_safe, class: 'page-link'
+  - else
+    = link_to t('views.pagination.last').html_safe, url, |
+      remote: remote, class: 'page-link'                 |

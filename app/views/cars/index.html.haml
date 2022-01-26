@@ -1,6 +1,8 @@
+
 .container
   .row
     .col-3
+      
       .h4.m-4= I18n.t('cars.index.choose_sort')
       %ul.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
         %li.nav-link.px-2=link_to I18n.t('cars.index.date_desc'), cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :desc))
@@ -10,7 +12,6 @@
     .col-4
       .h4.m-4= I18n.t('cars.index.cars_list')
       .h4.m-4= I18n.t('cars.index.cars_quantity', quantity: @cars.count)
-
       - @cars.each do |car|
         .col.m-4
           .card{style: "width: 25rem;"}
@@ -23,6 +24,7 @@
               .card-text= I18n.t('cars.index.description', param: car.description)
               .card-text= I18n.t('cars.index.make', param: car.created_at.to_date)
         .mb-3
+      = paginate @cars
     .col-4
       -if params.key?(:make)
         .h4.m-4= I18n.t('cars.index.search_params')
@@ -33,3 +35,5 @@
           %li.ml-2= I18n.t('cars.index.price_to', param: params[:price_to])
           %li.ml-2= I18n.t('cars.index.year_from', param: params[:year_from])
           %li.ml-2= I18n.t('cars.index.year_to', param: params[:year_to])
+
+ 

@@ -12,4 +12,6 @@ Style/FrozenStringLiteralComment:
 Style/Documentation:
   Enabled: false
 
-
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - app/models/user.rb
