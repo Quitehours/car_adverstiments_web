@@ -1,6 +1,6 @@
 class User < ApplicationRecord
+  has_many :searches
+
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
-
-  has_many :searches
 end

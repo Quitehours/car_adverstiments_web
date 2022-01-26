@@ -18,7 +18,8 @@ en:
         help: Help
         search: Search
         cars_list: Cars list
-        logout: Logout
+        logout: Logout %{user}
+        logout_help: Logout
         login: Login
         sign_up: Sign Up
         my_searches: My Searches

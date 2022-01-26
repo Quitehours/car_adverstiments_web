@@ -2,7 +2,7 @@
 
 = render 'shared/errors', object: @search
 
-= form_with model: @search do |f|
+= form_with model: [@user, @search] do |f|
   .form-group.m-4
     .label.mb-2= f.label :make
     = f.text_field :make, placeholder: I18n.t('searches.new.placeholders.make')

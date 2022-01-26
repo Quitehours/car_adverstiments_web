@@ -6,8 +6,8 @@
         %li= link_to I18n.t('static_pages.options.help'), help_path, class: "nav-link px-2 text-white btn btn-dark"
         %li= link_to I18n.t('static_pages.options.cars_list'), cars_path, class: "nav-link px-2 text-white btn btn-dark"
         %li= link_to I18n.t('static_pages.options.search'), new_search_path, class: "nav-link px-2 text-white btn btn-dark"
-        %li= link_to I18n.t('static_pages.options.login'), new_user_session_path, class: "nav-link px-2 text-white btn btn-dark"
-        %li= link_to I18n.t('static_pages.options.sign_up'), new_user_registration_path, class: "nav-link px-2 text-white btn btn-dark"
-        %li= link_to I18n.t('static_pages.options.my_searches'), searches_path, class: "nav-link px-2 text-white btn btn-dark"
-        %li= button_to I18n.t('static_pages.options.logout'), destroy_user_session_path, method: :delete, class: "nav-link px-2 text-white btn btn-dark"
-           
+        %li= link_to I18n.t('static_pages.options.login'), new_user_session_path, class: "nav-link px-2 text-white btn btn-dark" if current_user.nil?
+        %li= link_to I18n.t('static_pages.options.sign_up'), new_user_registration_path, class: "nav-link px-2 text-white btn btn-dark" if current_user.nil?
+        %li= link_to I18n.t('static_pages.options.my_searches'), searches_path, class: "nav-link px-2 text-white btn btn-dark" if current_user
+        %li= button_to I18n.t('static_pages.options.logout', user: current_user.email), destroy_user_session_path, method: :delete, class: "nav-link px-2 text-secondary btn btn-dark" if current_user
+        

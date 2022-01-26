@@ -8,18 +8,13 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @search = Search.new(create_params)
-
-    if @search.save
-      redirect_to cars_path(create_params)
-    else
-      render :new
-    end
+    @search = current_user.searches.build(search_params).save if current_user
+    redirect_to cars_path(search_params)
   end
 
   private
 
-  def create_params
+  def search_params
     params.require(:search).permit(:make, :model, :price_from, :price_to, :year_from, :year_to)
   end
 end
