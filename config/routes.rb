@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :users do
-    resources :searches, only: %i[index]
-  end
-
-  resources :searches, only: %i[new create]
-
+  resources :searches, only: %i[index new create]
   resources :cars, only: %i[index]
 
   get '/help', to: 'static_pages#help'

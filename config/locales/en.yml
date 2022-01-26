@@ -38,10 +38,11 @@ en:
       all_searches: 'All searches:'
       make: 'Make: %{param}'
       model: 'Model: %{param}'
-      year_from: 'Year from: %{from}'
+      year_from: 'Year from: %{param}'
       year_to: 'Year to: %{param}'
       price_from: 'Price from: %{param}'
       price_to: 'Price to: %{param}'
+      created_at: 'Date added: %{param}'
   cars:
     index:
       choose_sort: 'Choose sort:'
@@ -58,3 +59,8 @@ en:
       odometer: 'Odometer: %{param}'
       description: 'Description: %{param}'
       date_added: 'Date added: %{param}'
+      year_from: 'Year from: %{param}'
+      year_to: 'Year to: %{param}'
+      price_from: 'Price from: %{param}'
+      price_to: 'Price to: %{param}'
+      search_params: 'Search params:'

@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def index
-    @searches = Search.all
+    @searches = current_user.searches.order created_at: :desc
   end
 
   def new
@@ -8,13 +8,13 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @search = current_user.searches.build(search_params).save if current_user
-    redirect_to cars_path(search_params)
+    @search = current_user.searches.build(create_params).save if current_user
+    redirect_to cars_path(create_params)
   end
 
   private
 
-  def search_params
+  def create_params
     params.require(:search).permit(:make, :model, :price_from, :price_to, :year_from, :year_to)
   end
 end

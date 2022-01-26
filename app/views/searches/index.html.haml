@@ -1,6 +1,6 @@
 .h4.m-5= I18n.t('searches.index.all_searches')
 
-- @searhces.each do |search|
+- @searches.each do |search|
   .col.m-4
     .card{style: "width: 25rem;"}
       .card-body  
@@ -9,7 +9,7 @@
         .card-text= I18n.t('searches.index.year_from', param: search.year_from)
         .card-text= I18n.t('searches.index.year_to', param: search.year_to)
         .card-text= I18n.t('searches.index.price_from', param: search.price_from)
-        .card-text= I18n.t('searches.index.placeholders.price_to', param: search.price_to)
-        .card-text= I18n.t('searches.index.placeholders.create_at', param: search.create_at) 
+        .card-text= I18n.t('searches.index.price_to', param: search.price_to)
+        .card-text= I18n.t('searches.index.created_at', param: search.created_at.to_date) 
     .mb-3
 

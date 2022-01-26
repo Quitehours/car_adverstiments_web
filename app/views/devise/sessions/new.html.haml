@@ -1,0 +1,17 @@
+.container
+  .card.mt-4{style: "width: 25rem;"}
+    %h2.m-4 Log in
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group.m-4
+        .label.mb-2= f.label :email
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .form-group.m-4
+        .label.mb-2= f.label :password
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .form-group.m-4
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .form-group.m-4
+        = f.submit "Log in"
+    .m-4= render "devise/shared/links"
