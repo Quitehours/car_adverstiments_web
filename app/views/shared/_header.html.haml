@@ -1,0 +1,13 @@
+%header.p-3.bg-dark.text-white
+  .container
+    %nav.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+      %ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+        %li= link_to I18n.t('static_pages.options.home'), root_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= link_to I18n.t('static_pages.options.help'), help_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= link_to I18n.t('static_pages.options.cars_list'), cars_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= link_to I18n.t('static_pages.options.search'), new_search_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= link_to I18n.t('static_pages.options.login'), new_user_session_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= link_to I18n.t('static_pages.options.sign_up'), new_user_registration_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= link_to I18n.t('static_pages.options.my_searches'), searches_path, class: "nav-link px-2 text-white btn btn-dark"
+        %li= button_to I18n.t('static_pages.options.logout'), destroy_user_session_path, method: :delete, class: "nav-link px-2 text-white btn btn-dark"
+           
