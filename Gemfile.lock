@@ -107,8 +107,9 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    haml (5.2.2)
-      temple (>= 0.8.0)
+    hamlit (2.15.2)
+      temple (>= 0.8.2)
+      thor
       tilt
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
@@ -120,9 +121,6 @@ GEM
     irb (1.4.1)
       reline (>= 0.3.0)
     jaro_winkler (1.5.4)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -287,8 +285,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.0.2)
-      railties (>= 6.0.0)
     strong_migrations (0.7.9)
       activerecord (>= 5)
     strscan (3.0.1)
@@ -323,22 +319,21 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
-  bootsnap
-  bootstrap (~> 5.0.2)
+  bcrypt (~> 3.1)
+  bootsnap (~> 1.10)
+  bootstrap (~> 5.0)
   bundler-audit (~> 0.9.0.1)
   bundler-leak (~> 0.2.0)
   debug
   devise (~> 4.8)
   ffaker (~> 2.20)
-  haml (~> 5.2)
-  importmap-rails
-  jbuilder
-  kaminari (~> 1.2.2)
+  hamlit (~> 2.15)
+  importmap-rails (~> 1.0)
+  kaminari (~> 1.2)
   pg (~> 1.1)
   pry-rails (~> 0.3.4)
   puma (~> 5.0)
-  rails (~> 7.0.1)
+  rails (~> 7.0)
   rspec (~> 3.10)
   rubocop (~> 1.22.0)
   rubocop-performance (~> 1.11)
@@ -346,11 +341,10 @@ DEPENDENCIES
   rubocop-rake (~> 0.6.0)
   sass-rails (~> 6.0)
   solargraph (~> 0.44.2)
-  sprockets-rails
-  stimulus-rails
+  sprockets-rails (~> 3.4)
   strong_migrations (~> 0.7.9)
-  traceroute (~> 0.8.1)
-  turbo-rails
+  traceroute (~> 0.8)
+  turbo-rails (~> 1.0)
   tzinfo-data
   web-console (~> 4.2)
 
