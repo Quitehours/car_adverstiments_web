@@ -5,14 +5,13 @@ ruby File.read('.ruby-version').strip
 
 gem 'rails', '~> 7.0'
 
-gem 'bcrypt', '~> 3.1'
 gem 'bootsnap', '~> 1.10', require: false
 gem 'bootstrap', '~> 5.0'
 gem 'devise', '~> 4.8'
 gem 'hamlit', '~> 2.15'
 gem 'importmap-rails', '~> 1.0'
 gem 'kaminari', '~> 1.2'
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.3.0'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '~> 6.0'
 gem 'sprockets-rails', '~> 3.4'

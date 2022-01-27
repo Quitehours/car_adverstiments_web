@@ -1,5 +1,7 @@
 class SearchesController < ApplicationController
+  
   def index
+    authenticate_user!
     @searches = current_user.searches.order created_at: :desc
   end
 
@@ -8,7 +10,7 @@ class SearchesController < ApplicationController
   end
 
   def create
-    ccurrent_user&.searches&.create!(create_params)
+    current_user&.searches&.create!(create_params)
 
     redirect_to cars_path(create_params)
   end
