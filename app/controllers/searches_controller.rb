@@ -8,7 +8,8 @@ class SearchesController < ApplicationController
   end
 
   def create
-    @search = current_user.searches.build(create_params).save if current_user
+    ccurrent_user&.searches&.create!(create_params)
+
     redirect_to cars_path(create_params)
   end
 

@@ -5,7 +5,8 @@
       
       .h4.m-4= I18n.t('cars.index.choose_sort')
       %ul.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
-        %li.nav-link.px-2=link_to I18n.t('cars.index.date_desc'), cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :desc))
+        %li.nav-link.px-2
+          = link_to I18n.t('cars.index.date_desc'), cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :desc))
         %li.nav-link.px-2=link_to I18n.t('cars.index.date_asc'), cars_path(request.params.merge(sort_type: :created_at).merge(sort_direction: :asc))
         %li.nav-link.px-2=link_to I18n.t('cars.index.price_desc'), cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :desc))
         %li.nav-link.px-2=link_to I18n.t('cars.index.price_asc'), cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :asc))
