@@ -1,8 +1,6 @@
-
 .container
   .row
     .col-3
-      
       .h4.m-4= I18n.t('cars.index.choose_sort')
       %ul.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
         %li.nav-link.px-2
@@ -12,7 +10,7 @@
         %li.nav-link.px-2=link_to I18n.t('cars.index.price_asc'), cars_path(request.params.merge(sort_type: :price).merge(sort_direction: :asc))
     .col-4
       .h4.m-4= I18n.t('cars.index.cars_list')
-      .h4.m-4= I18n.t('cars.index.cars_quantity', quantity: @cars.count)
+      .h4.m-4= I18n.t('cars.index.cars_quantity', quantity: @cars.total_count)
       - @cars.each do |car|
         .col.m-4
           .card{style: "width: 25rem;"}

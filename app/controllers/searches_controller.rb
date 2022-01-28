@@ -1,5 +1,4 @@
 class SearchesController < ApplicationController
-  
   def index
     authenticate_user!
     @searches = current_user.searches.order created_at: :desc

@@ -9,7 +9,8 @@ class CarsQuery
     collection = filtration_by_price(collection, rules[:price_from], rules[:price_to])
     collection = filtration_by_year(collection, rules[:year_from], rules[:year_to])
     collection = sorting(collection, rules[:sort_type], rules[:sort_direction])
-    paginate(collection, rules[:page])
+    collection = paginate(collection, rules[:page])
+    collection
   end
 
   private
@@ -40,6 +41,6 @@ class CarsQuery
 
   def paginate(cars, page_number)
     page_number = 1 if page_number.nil?
-    cars.page(page_number).per(3)
+    cars.page(page_number)
   end
 end

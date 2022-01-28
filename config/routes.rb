@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, excepted: %i[registrations#edit]
 
   resources :searches, only: %i[index new create]
   resources :cars, only: %i[index]
