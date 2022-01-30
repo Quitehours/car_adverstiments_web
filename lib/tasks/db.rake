@@ -8,7 +8,7 @@ namespace :db do
         Car.create(car_params)
       end
 
-      puts I18n.t('tasks.db.cars_seed', quantity: quantity)
+      puts t('tasks.db.cars_seed', quantity: quantity)
     end
 
     def car_params
