@@ -1,18 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { FactoryBot.create(:user, :with_searches) }
-  describe 'successed create user' do
-    it 'is valid with valid attributes' do
-      expect(user).to be_valid
-    end
+  describe 'fields' do
+    it { is_expected.to have_db_column(:id).of_type(:integer) }
+    it { is_expected.to have_db_column(:email).of_type(:string).with_options(null: false, default: '') }
+    it { is_expected.to have_db_column(:encrypted_password).of_type(:string).with_options(null: false, default: '') }
+
+    it { is_expected.to have_db_column(:created_at).of_type(:datetime) }
+    it { is_expected.to have_db_column(:updated_at).of_type(:datetime) }
   end
 
   describe 'validations' do
-    subject { user }
-
-    context 'association' do
+    context 'model relations' do
       it { is_expected.to have_many(:searches).dependent(:destroy) }
+    end
+
+    context 'model index' do
+      it { is_expected.to have_db_index(:email).unique(true) }
     end
   end
 end

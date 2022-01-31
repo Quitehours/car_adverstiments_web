@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 FactoryBot.define do
   factory :car do
     make { FFaker::Vehicle.make }

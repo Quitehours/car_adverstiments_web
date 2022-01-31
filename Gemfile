@@ -26,6 +26,7 @@ group :development, :test do
   gem 'ffaker', '~> 2.20'
   gem 'lefthook', '~> 0.7.7'
   gem 'pry-rails', '~> 0.3.4'
+  gem 'rspec-rails', '~> 5.1'
   gem 'rubocop', '~> 1.22.0', require: false
   gem 'rubocop-performance', '~> 1.11'
   gem 'rubocop-rails', '~> 2.13'
@@ -37,7 +38,6 @@ end
 
 group :test do
   gem 'database_cleaner', '~> 2.0'
-  gem 'rspec-rails', '~> 5.1'
   gem 'shoulda-matchers', '~> 5.1'
   gem 'simplecov', '~> 0.12.0', require: false
 end
