@@ -28,9 +28,9 @@ RSpec.describe Car, of_type: :model do
       it { is_expected.to validate_numericality_of(:year).is_greater_than(0) }
       it { is_expected.to validate_numericality_of(:odometer).is_greater_than(0) }
     end
+  end
 
-    context 'model index' do
-      it { is_expected.to have_db_index(%i[make model price]) }
-    end
+  describe 'model index' do
+    it { is_expected.to have_db_index(%i[make model price]) }
   end
 end

@@ -10,13 +10,15 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime).with_options(null: false) }
   end
 
-  describe 'validations' do
-    context 'model relations' do
-      it { is_expected.to have_many(:searches).dependent(:destroy) }
-    end
+  describe 'model validations' do
+    it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
+  end
 
-    context 'model index' do
-      it { is_expected.to have_db_index(:email).unique(true) }
-    end
+  describe 'model index' do
+    it { is_expected.to have_db_index(:email).unique(true) }
+  end
+
+  describe 'model relations' do
+    it { is_expected.to have_many(:searches).dependent(:destroy) }
   end
 end

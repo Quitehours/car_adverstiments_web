@@ -14,9 +14,7 @@ RSpec.describe Search, type: :model do
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime) }
   end
 
-  describe 'validations' do
-    context 'model relations' do
-      it { is_expected.to belong_to(:user) }
-    end
+  describe 'model relations' do
+    it { is_expected.to belong_to(:user) }
   end
 end
