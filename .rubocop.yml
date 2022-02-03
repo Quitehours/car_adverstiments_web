@@ -1,9 +1,10 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 3.1.0
   NewCops: enable
 
 Style/FrozenStringLiteralComment:
@@ -14,4 +15,4 @@ Style/Documentation:
 
 Metrics/BlockLength:
   Exclude:
-    - spec/models/car_spec.rb
+    - 'spec/**/*.rb'

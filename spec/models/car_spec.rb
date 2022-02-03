@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Car, of_type: :model do
   describe 'fields' do
     it { is_expected.to have_db_column(:id).of_type(:integer) }
@@ -15,7 +13,7 @@ RSpec.describe Car, of_type: :model do
   end
 
   describe 'validations' do
-    context 'model presence' do
+    context 'when model presence' do
       it { is_expected.to validate_presence_of(:make) }
       it { is_expected.to validate_presence_of(:model) }
       it { is_expected.to validate_presence_of(:price) }
@@ -23,7 +21,7 @@ RSpec.describe Car, of_type: :model do
       it { is_expected.to validate_presence_of(:odometer) }
     end
 
-    context 'model numericality' do
+    context 'when model numericality' do
       it { is_expected.to validate_numericality_of(:price).is_greater_than(0) }
       it { is_expected.to validate_numericality_of(:year).is_greater_than(0) }
       it { is_expected.to validate_numericality_of(:odometer).is_greater_than(0) }

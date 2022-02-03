@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.11'
   gem 'rubocop-rails', '~> 2.13'
   gem 'rubocop-rake', '~> 0.6.0'
+  gem 'rubocop-rspec', '~> 2.8'
   gem 'solargraph', '~> 0.44.2'
   gem 'strong_migrations', '~> 0.7.9'
   gem 'traceroute', '~> 0.8'
