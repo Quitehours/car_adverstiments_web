@@ -21,8 +21,8 @@
       "/Users/Dmytro_Lukash/projects/lab_epam/ror/car_adverstiments_web/app/controllers/searches_controller.rb": [
         1,
         1,
-        1,
-        0,
+        3,
+        2,
         null,
         null,
         1,
@@ -51,26 +51,6 @@
         null
       ],
       "/Users/Dmytro_Lukash/projects/lab_epam/ror/car_adverstiments_web/app/models/search.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/Dmytro_Lukash/projects/lab_epam/ror/car_adverstiments_web/app/controllers/turbo_devise_controller.rb": [
-        1,
-        1,
-        1,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
         1,
         1,
         null
@@ -121,8 +101,28 @@
         5,
         null,
         null
+      ],
+      "/Users/Dmytro_Lukash/projects/lab_epam/ror/car_adverstiments_web/app/controllers/turbo_devise_controller.rb": [
+        1,
+        1,
+        1,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1643931255
+    "timestamp": 1644092071
   }
 }

@@ -2,8 +2,9 @@ RSpec.describe SearchesController, type: :controller do
   describe '#index' do
     render_views
     context "when user isn't authenticated" do
-      it 'return raise error' do 
-        expect{ get :index }.to raise_error
+      it 'redirect to page login' do
+        get :index
+        expect(response).to have_http_status(302)
       end
     end
 
