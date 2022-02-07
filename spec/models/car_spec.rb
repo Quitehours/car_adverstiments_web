@@ -14,7 +14,7 @@ RSpec.describe Car, of_type: :model do
 
   describe 'validations' do
     context 'when model presence' do
-      it { is_expected.to validate_presence_of(:make) }
+      it {  validate_presence_of(:make) }
       it { is_expected.to validate_presence_of(:model) }
       it { is_expected.to validate_presence_of(:price) }
       it { is_expected.to validate_presence_of(:year) }

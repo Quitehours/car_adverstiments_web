@@ -1,17 +1,20 @@
 RSpec.describe CarsController, type: :controller do
+  render_views
   describe '#index' do
-    render_views
-    
     context 'when index params not provide' do
       let!(:cars) { create_list(:car, 3) }
 
+      before { get :index }
+
+      it "template renders success with status'200'" do
+        expect(response).to have_http_status(:ok)
+      end
+
       it 'view renders correct' do
-        get :index
         expect(response.body).to match(/Cars Quantity:/)
       end
 
-      it "doesn't filter cars" do
-        get :index
+      it 'return list cars' do
         expect(controller.instance_variable_get(:@cars).to_a).to match_array(cars)
       end
     end
