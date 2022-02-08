@@ -14,3 +14,7 @@ development:
 test:
   <<: *default
   database: car_adverstiments_web_test
+
+production:
+  <<: *default
+  database: car_adverstiments_web_production
