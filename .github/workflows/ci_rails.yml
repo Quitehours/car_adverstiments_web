@@ -1,4 +1,4 @@
-name: ci_rails
+name: Tests and Linters checking
 
 on:
   - push
