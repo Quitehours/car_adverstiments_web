@@ -23,6 +23,7 @@ group :development, :test do
   gem 'bundler-leak', '~> 0.2.0'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'fasterer', '~> 0.1.9'
   gem 'ffaker', '~> 2.20'
   gem 'lefthook', '~> 0.7.7'
   gem 'pry-rails', '~> 0.3.4'
@@ -36,7 +37,6 @@ group :development, :test do
   gem 'strong_migrations', '~> 0.7.9'
   gem 'traceroute', '~> 0.8'
 end
-
 group :test do
   gem 'database_cleaner', '~> 2.0'
   gem 'shoulda-matchers', '~> 5.1'

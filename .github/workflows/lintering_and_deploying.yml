@@ -1,4 +1,4 @@
-name: Tests and Linters checking
+name: Lintering and Deploying
 
 on:
   - push
@@ -7,9 +7,8 @@ on:
 jobs:
   test:
     strategy:
-      fail-fast: false
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
         gemfile:
           - Gemfile
         ruby:
@@ -24,5 +23,5 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundle-cache: true
-      - run: bundle exec rake spec
-
+      - run: bundle exec lefthook run pre-commit
+      - run: bundle exec rspec

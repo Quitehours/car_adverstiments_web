@@ -9,8 +9,7 @@ class CarsQuery
     collection = filtration_by_price(collection, rules[:price_from], rules[:price_to])
     collection = filtration_by_year(collection, rules[:year_from], rules[:year_to])
     collection = sorting(collection, rules[:sort_type], rules[:sort_direction])
-    collection = paginate(collection, rules[:page])
-    collection
+    paginate(collection, rules[:page])
   end
 
   private
