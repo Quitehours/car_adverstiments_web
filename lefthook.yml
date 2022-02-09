@@ -1,8 +1,6 @@
 pre-push:
   parallel: true
   commands:
-    rubocop:
-      run: bundle exec rubocop
     rspec:
       run: bundle exec rspec
 pre-commit:

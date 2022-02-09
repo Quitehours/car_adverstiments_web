@@ -33,16 +33,16 @@ RSpec.describe CarsQuery do
       end
     end
 
-    context 'when not empty params' do
-      subject { described_class.new.call(params) }
+    # context 'when not empty params' do
+    #   subject { described_class.new.call(params) }
 
-      let(:initial_cars) { Car.all }
-      let(:params) { attributes_for(:search) }
+    #   let(:initial_cars) { Car.all }
+    #   let(:params) { attributes_for(:search) }
 
-      it "filters 'make'" do
-        create(:car, make: params[:make])
-        expect(instance_described_class.to_sql).to include("make ILIKE %#{params[:make]}%")
-      end
-    end
+    #   it "filters 'make'" do
+    #     create(:car, make: params[:make])
+    #     expect(instance_described_class.to_sql).to include("make ILIKE %#{params[:make]}%")
+    #   end
+    # end
   end
 end
