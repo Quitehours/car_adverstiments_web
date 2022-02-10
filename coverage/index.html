@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-08T01:32:08+02:00">2022-02-08T01:32:08+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-02-10T21:34:48+02:00">2022-02-10T21:34:48+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.61
+         8.98
        </span>
     </span> hits/line)
   </h2>
@@ -77,7 +77,7 @@
         <td>29</td>
         <td>29</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>10.9</td>
       </tr>
       
     </tbody>
@@ -214,8 +214,8 @@
           <code class="ruby">  def initialize(initial_cars = Car.all)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="3">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="18" data-linenumber="3">
+          <span class="hits">18</span>
           
           <code class="ruby">    @initial_cars = initial_cars</code>
         </li>
@@ -238,44 +238,44 @@
           <code class="ruby">  def call(rules)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="7">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="7">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection = filter_by_make(@initial_cars, rules[:make])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="8">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection = filter_by_model(collection, rules[:model])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="9">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="9">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection = filtration_by_price(collection, rules[:price_from], rules[:price_to])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="10">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="10">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection = filtration_by_year(collection, rules[:year_from], rules[:year_to])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="11">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="11">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection = sorting(collection, rules[:sort_type], rules[:sort_direction])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="12">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="12">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection = paginate(collection, rules[:page])</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="13">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection</code>
         </li>
@@ -310,8 +310,8 @@
           <code class="ruby">  def filter_by_make(collection, query = nil)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="19">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="19">
+          <span class="hits">16</span>
           
           <code class="ruby">    query.present? ? collection.where(&#39;make ILIKE ?&#39;, &quot;%#{query}%&quot;) : collection</code>
         </li>
@@ -334,8 +334,8 @@
           <code class="ruby">  def filter_by_model(collection, query = nil)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="23">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="23">
+          <span class="hits">16</span>
           
           <code class="ruby">    query.present? ? collection.where(&#39;model ILIKE ?&#39;, &quot;%#{query}%&quot;) : collection</code>
         </li>
@@ -358,16 +358,16 @@
           <code class="ruby">  def filtration_by_price(collection, from_price = nil, to_price = nil)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="27">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="27">
+          <span class="hits">16</span>
           
-          <code class="ruby">    collection = from_price.present? ? collection.where(&#39;price &gt; ?&#39;, from_price.to_i) : collection</code>
+          <code class="ruby">    collection = from_price.present? ? collection.where(&#39;price &gt;= ?&#39;, from_price.to_i) : collection</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="28">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="28">
+          <span class="hits">16</span>
           
-          <code class="ruby">    to_price.present? ? collection.where(&#39;price &lt; ?&#39;, to_price.to_i) : collection</code>
+          <code class="ruby">    to_price.present? ? collection.where(&#39;price &lt;= ?&#39;, to_price.to_i) : collection</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -388,16 +388,16 @@
           <code class="ruby">  def filtration_by_year(collection, from_year = nil, to_year = nil)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="32">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="32">
+          <span class="hits">16</span>
           
-          <code class="ruby">    collection = from_year.present? ? collection.where(&#39;year &gt; ?&#39;, from_year.to_i) : collection</code>
+          <code class="ruby">    collection = from_year.present? ? collection.where(&#39;year &gt;= ?&#39;, from_year.to_i) : collection</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="33">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="33">
+          <span class="hits">16</span>
           
-          <code class="ruby">    to_year.present? ? collection.where(&#39;year &lt; ?&#39;, to_year.to_i) : collection</code>
+          <code class="ruby">    to_year.present? ? collection.where(&#39;year &lt;= ?&#39;, to_year.to_i) : collection</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -418,20 +418,20 @@
           <code class="ruby">  def sorting(collection, sort_type, sort_direction)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="37">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="37">
+          <span class="hits">16</span>
           
           <code class="ruby">    sort_type = :price if sort_type.nil?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="38">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="38">
+          <span class="hits">16</span>
           
           <code class="ruby">    sort_direction = :desc if sort_direction.nil?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="39">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="39">
+          <span class="hits">16</span>
           
           <code class="ruby">    collection.order(sort_type =&gt; sort_direction)</code>
         </li>
@@ -454,14 +454,14 @@
           <code class="ruby">  def paginate(cars, page_number)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="43">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="43">
+          <span class="hits">16</span>
           
           <code class="ruby">    page_number = 1 if page_number.nil?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="44">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="16" data-linenumber="44">
+          <span class="hits">16</span>
           
           <code class="ruby">    cars.page(page_number)</code>
         </li>

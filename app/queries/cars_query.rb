@@ -24,13 +24,13 @@ class CarsQuery
   end
 
   def filtration_by_price(collection, from_price = nil, to_price = nil)
-    collection = from_price.present? ? collection.where('price > ?', from_price.to_i) : collection
-    to_price.present? ? collection.where('price < ?', to_price.to_i) : collection
+    collection = from_price.present? ? collection.where('price >= ?', from_price.to_i) : collection
+    to_price.present? ? collection.where('price <= ?', to_price.to_i) : collection
   end
 
   def filtration_by_year(collection, from_year = nil, to_year = nil)
-    collection = from_year.present? ? collection.where('year > ?', from_year.to_i) : collection
-    to_year.present? ? collection.where('year < ?', to_year.to_i) : collection
+    collection = from_year.present? ? collection.where('year >= ?', from_year.to_i) : collection
+    to_year.present? ? collection.where('year <= ?', to_year.to_i) : collection
   end
 
   def sorting(collection, sort_type, sort_direction)
