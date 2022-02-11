@@ -1,3 +1,5 @@
+require 'ffaker'
+
 namespace :db do
   namespace :cars do
     desc 'Add cars to database'

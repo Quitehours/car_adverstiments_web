@@ -1,5 +1,3 @@
-require 'ffaker'
-
-require File.expand_path('../config/application', __dir__)
+require_relative 'config/application'
 
 Rails.application.load_tasks

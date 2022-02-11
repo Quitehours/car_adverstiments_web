@@ -13,4 +13,5 @@ pre-commit:
     bundler-audit:
       run: bundle exec bundler-audit check --update
     fasterer:
+      exclude: "vendor/**/**.rb"
       run: bundle exec fasterer

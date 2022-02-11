@@ -1,0 +1,66 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.4.0
+  heroku: circleci/heroku@0.0.10
+executors:
+  default:
+    working_directory: ~/car_advertisements_web
+    description: Ruby on Rails docker
+    docker:
+      - image: cimg/ruby:3.1.0-node
+      - image: circleci/postgres:11-alpine
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: car_adverstiments_web_test
+          POSTGRES_PASSWORD: "kerfi10dima"
+    environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: "kerfi10dima"
+      RAILS_ENV: test
+caches:
+  - &bundle_cache_full v1-car_advertisements_web{{ checksum "Gemfile.lock" }}
+  - &bundle_cache v1-car_advertisements_web
+commands:
+  defaults:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - *bundle_cache_full
+            - *bundle_cache
+      - run:
+          name: install require gems
+          command: bundle install --path vendor/bundle
+      - save_cache:
+          key: *bundle_cache_full
+          paths:
+            - vendor/bundle
+  run_linters:
+    description: start lefthook
+    steps:
+      - run:
+          name: run linters
+          command: bundle exec lefthook run pre-commit
+  run_rspec:
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: bundle exec rake db:schema:load
+      - run:
+          name: run tests
+          command: bundle exec rspec
+ 
+                            
+jobs:
+  build:
+    executor: default
+    steps:
+      - defaults
+      - run_linters
+      - run_rspec
