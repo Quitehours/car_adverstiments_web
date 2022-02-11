@@ -8,6 +8,7 @@ gem 'rails', '~> 7.0'
 gem 'bootsnap', '~> 1.10', require: false
 gem 'bootstrap', '~> 5.0'
 gem 'devise', '~> 4.8'
+gem 'ffaker', '~> 2.20'
 gem 'hamlit', '~> 2.15'
 gem 'importmap-rails', '~> 1.0'
 gem 'kaminari', '~> 1.2'
@@ -24,7 +25,6 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'fasterer', '~> 0.1.9'
-  gem 'ffaker', '~> 2.20'
   gem 'lefthook', '~> 0.7.7'
   gem 'pry-rails', '~> 0.3.4'
   gem 'rspec-rails', '~> 5.1'
