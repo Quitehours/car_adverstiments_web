@@ -22,22 +22,13 @@ RSpec.describe CarsQuery do
 
   describe '#call' do
     context 'with empty params' do
-      before { create_list(:car, 10) }
-
+      let!(:auto_create_list_cars) { create_list(:car, 3) }
       let(:cars_query_call) { described_class.new(cars_list).call(params) }
       let(:cars_list) { Car.all }
       let(:params) { {} }
 
-      it 'sorts' do
-        expect(cars_query_call.to_sql).to include('ORDER BY "cars"."price" DESC')
-      end
-
-      it 'paginates limit' do
-        expect(cars_query_call.to_sql).to include('LIMIT')
-      end
-
-      it 'paginates offset' do
-        expect(cars_query_call.to_sql).to include('OFFSET')
+      it 'the last elements are compared with the sorting' do
+        expect(cars_query_call.last).to eql(Car.all.order(price: :desc).last)
       end
 
       it 'return all list of cars' do
@@ -48,17 +39,9 @@ RSpec.describe CarsQuery do
     context 'when params pass' do
       let(:expected_search) { create(:search) }
 
-      it "correct query by 'make'" do
-        expect(described_class.new.call(make: expected_search[:make]).to_sql).to include('make ILIKE')
-      end
-
       it "filtering by 'make'" do
         expected_cars = create_list(:car, 3, make: expected_search[:make])
         expect(described_class.new.call(make: expected_search[:make])).to match_array(expected_cars)
-      end
-
-      it "correct query by 'model'" do
-        expect(described_class.new.call(model: expected_search[:model]).to_sql).to include('model ILIKE')
       end
 
       it "filtering by 'model'" do
@@ -66,17 +49,9 @@ RSpec.describe CarsQuery do
         expect(described_class.new.call(model: expected_search[:model])).to match_array(expected_cars)
       end
 
-      it "correct query by 'price_from'" do
-        expect(described_class.new.call(price_from: expected_search[:price_from]).to_sql).to include('price >')
-      end
-
       it "filtering by 'price_from'" do
         expected_cars = create_list(:car, 3, price: expected_search[:price_from])
         expect(described_class.new.call(price_from: expected_search[:price_from])).to match_array(expected_cars)
-      end
-
-      it "correct query by 'price_to'" do
-        expect(described_class.new.call(price_to: expected_search[:price_to]).to_sql).to include('price <=')
       end
 
       it "filtering by 'price_to'" do
@@ -84,22 +59,35 @@ RSpec.describe CarsQuery do
         expect(described_class.new.call(price_to: expected_search[:price_to])).to match_array(expected_cars)
       end
 
-      it "correct query by 'year_from'" do
-        expect(described_class.new.call(year_from: expected_search[:year_from]).to_sql).to include('year >=')
-      end
-
       it "filtering by 'year_from'" do
         expected_cars = create_list(:car, 3, year: expected_search[:year_from])
         expect(described_class.new.call(year_from: expected_search[:year_from])).to match_array(expected_cars)
       end
 
-      it "correct query by 'year_to'" do
-        expect(described_class.new.call(year_to: expected_search[:year_to]).to_sql).to include('year <=')
-      end
-
       it "filtering by 'year_to'" do
         expected_cars = create_list(:car, 3, year: expected_search[:year_to])
         expect(described_class.new.call(year_to: expected_search[:year_to])).to match_array(expected_cars)
+      end
+
+      it "the last elements are compared with the sorting 'created_at desc' " do
+        params = { sort_type: :created_at, sort_direction: :desc }
+        expected_cars = create_list(:car, 3)
+        expected_result = expected_cars.sort_by { |car| car.created_at }.reverse.last
+        expect(described_class.new.call(params).last).to eql(expected_result)
+      end
+
+      it "the last elements are compared with the sorting 'created_at asc' " do
+        params = { sort_type: :created_at, sort_direction: :asc }
+        expected_cars = create_list(:car, 3)
+        expected_result = expected_cars.sort_by { |car| car.created_at }.last
+        expect(described_class.new.call(params).last).to eql(expected_result)
+      end
+
+      it "the last elements are compared with the sorting 'price asc' " do
+        params = { sort_type: :price, sort_direction: :asc }
+        expected_cars = create_list(:car, 3)
+        expected_result = expected_cars.sort_by { |car| car.price }.last
+        expect(described_class.new.call(params).last).to eql(expected_result)
       end
     end
   end
