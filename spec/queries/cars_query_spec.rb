@@ -22,13 +22,14 @@ RSpec.describe CarsQuery do
 
   describe '#call' do
     context 'with empty params' do
-      let!(:auto_create_list_cars) { create_list(:car, 3) }
+      let!(:expected_cars) { create_list(:car, 3) }
       let(:cars_query_call) { described_class.new(cars_list).call(params) }
       let(:cars_list) { Car.all }
       let(:params) { {} }
 
       it 'the last elements are compared with the sorting' do
-        expect(cars_query_call.last).to eql(Car.all.order(price: :desc).last)
+        expected_result = expected_cars.sort_by { |car| -car.price }.last
+        expect(cars_query_call.last).to eql(expected_result)
       end
 
       it 'return all list of cars' do
