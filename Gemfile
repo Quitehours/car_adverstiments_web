@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby File.read('.ruby-version').strip
+ruby "~> #{File.read('.ruby-version').strip}"
 
 gem 'rails', '~> 7.0'
 
@@ -24,20 +24,21 @@ group :development, :test do
   gem 'bundler-leak', '~> 0.2.0'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
+  gem 'fasterer', '~> 0.1.9'
   gem 'lefthook', '~> 0.7.7'
   gem 'pry-rails', '~> 0.3.4'
+  gem 'rspec-rails', '~> 5.1'
   gem 'rubocop', '~> 1.22.0', require: false
   gem 'rubocop-performance', '~> 1.11'
   gem 'rubocop-rails', '~> 2.13'
   gem 'rubocop-rake', '~> 0.6.0'
+  gem 'rubocop-rspec', '~> 2.8'
   gem 'solargraph', '~> 0.44.2'
   gem 'strong_migrations', '~> 0.7.9'
   gem 'traceroute', '~> 0.8'
 end
-
 group :test do
   gem 'database_cleaner', '~> 2.0'
-  gem 'rspec-rails', '~> 5.1'
   gem 'shoulda-matchers', '~> 5.1'
   gem 'simplecov', '~> 0.12.0', require: false
 end

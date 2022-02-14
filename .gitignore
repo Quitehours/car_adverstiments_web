@@ -21,3 +21,5 @@
 
 .rvmrc
 .ruby-gemset
+
+/coverage

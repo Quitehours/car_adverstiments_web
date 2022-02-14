@@ -5,20 +5,20 @@
 = form_with model: [@user, @search] do |f|
   .form-group.m-4
     .label.mb-2= f.label :make
-    = f.text_field :make, placeholder: I18n.t('searches.new.placeholders.make')
+    = f.text_field :make, placeholder: t('searches.new.placeholders.make')
   .form-group.m-4
     .label.mb-2= f.label :model
-    = f.text_field :model, placeholder: I18n.t('searches.new.placeholders.model')
+    = f.text_field :model, placeholder: t('searches.new.placeholders.model')
   .form-group.m-4
     .label.mb-2= f.label :year_from
-    = f.text_field :year_from, placeholder: I18n.t('searches.new.placeholders.year_from')
+    = f.text_field :year_from, placeholder: t('searches.new.placeholders.year_from')
   .form-group.m-4
     .label.mb-2= f.label :year_to
-    = f.text_field :year_to, placeholder: I18n.t('searches.new.placeholders.year_to')
+    = f.text_field :year_to, placeholder: t('searches.new.placeholders.year_to')
   .form-group.m-4
     .label.mb-2= f.label :price_from
-    = f.text_field :price_from, placeholder: I18n.t('searches.new.placeholders.price_from')
+    = f.text_field :price_from, placeholder: t('searches.new.placeholders.price_from')
   .form-group.m-4
     .label.mb-2= f.label :price_to
-    = f.text_field :price_to, placeholder: I18n.t('searches.new.placeholders.price_to')
-  .m-4= f.submit I18n.t('searches.new.placeholders.perform_search')
+    = f.text_field :price_to, placeholder: t('searches.new.placeholders.price_to')
+  .m-4= f.submit t('searches.new.placeholders.perform_search')

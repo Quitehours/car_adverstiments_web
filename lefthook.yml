@@ -1,0 +1,17 @@
+pre-push:
+  parallel: true
+  commands:
+    rspec:
+      run: bundle exec rspec
+pre-commit:
+  parallel: true
+  commands:
+    rubocop:
+      run: bundle exec rubocop
+    bundler-leak:
+      run: bundle exec bundler-leak
+    bundler-audit:
+      run: bundle exec bundler-audit check --update
+    fasterer:
+      exclude: "vendor/**/**.rb"
+      run: bundle exec fasterer

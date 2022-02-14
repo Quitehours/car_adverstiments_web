@@ -1,3 +1,5 @@
+require 'ffaker'
+
 namespace :db do
   namespace :cars do
     desc 'Add cars to database'
@@ -8,7 +10,7 @@ namespace :db do
         Car.create(car_params)
       end
 
-      puts I18n.t('tasks.db.cars_seed', quantity: quantity)
+      puts t('tasks.db.cars_seed', quantity: quantity)
     end
 
     def car_params
